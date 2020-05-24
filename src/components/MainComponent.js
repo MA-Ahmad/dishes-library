@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Menu from "./MenuComponent";
-import "./App.css";
+import "../App.css";
 import DishDetail from "./DishdetailComponent";
 import { DISHES } from "../shared/dishes";
 
@@ -12,6 +12,7 @@ class Main extends Component {
       dishes: DISHES,
       selectedDish: null
     };
+    console.log("Main Component constructor is invoked");
   }
 
   onDishSelect(dishId) {
@@ -21,6 +22,8 @@ class Main extends Component {
   }
 
   render() {
+    console.log("Main Component render is invoked");
+
     return (
       <div>
         <Navbar dark color="primary">
