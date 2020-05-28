@@ -3,6 +3,7 @@ import Menu from "./MenuComponent";
 import "../App.css";
 import DishDetail from "./DishdetailComponent";
 import Home from "./HomeComponent";
+import About from "./AboutComponent";
 import Contact from "./ContactComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
@@ -21,16 +22,9 @@ class Main extends Component {
       comments: COMMENTS,
       promotions: PROMOTIONS,
       leaders: LEADERS
-      // selectedDish: null
     };
     console.log("Main Component constructor is invoked");
   }
-
-  // onDishSelect(dishId) {
-  //   this.setState({
-  //     selectedDish: dishId
-  //   });
-  // }
 
   render() {
     console.log("Main Component render is invoked");
@@ -65,6 +59,10 @@ class Main extends Component {
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route
+            path="/aboutus"
+            component={() => <About leaders={this.state.leaders} />}
+          />
+          <Route
             exact
             path="/menu"
             component={() => <Menu dishes={this.state.dishes} />}
@@ -73,17 +71,6 @@ class Main extends Component {
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
         </Switch>
-        {/* <Menu
-          dishes={this.state.dishes}
-          onClick={dishId => this.onDishSelect(dishId)}
-        />
-        <DishDetail
-          dish={
-            this.state.dishes.filter(
-              dish => dish.id === this.state.selectedDish
-            )[0]
-          }
-        /> */}
         <Footer />
       </div>
     );
