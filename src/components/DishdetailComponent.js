@@ -11,7 +11,13 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Col,
+  FormFeedback
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -108,23 +114,57 @@ class CommentForm extends Component {
           Submit Comment
         </Button>{" "}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Submit Comment</ModalHeader>
           <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            <Form onSubmit={this.handleSubmit}>
+              <FormGroup row>
+                <Label htmlFor="firstname" md={2}>
+                  Rating
+                </Label>
+                <Col md={12}>
+                  <Input
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    placeholder="First Name"
+                    value=""
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label htmlFor="lastname" md={4}>
+                  Your Name
+                </Label>
+                <Col md={12}>
+                  <Input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Your Name"
+                    value=""
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label htmlFor="message" md={4}>
+                  Comment
+                </Label>
+                <Col md={12}>
+                  <Input
+                    type="textarea"
+                    id="message"
+                    name="message"
+                    rows="6"
+                    value=""
+                  ></Input>
+                </Col>
+              </FormGroup>
+            </Form>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter className="flex-lg-row-reverse">
             <Button color="primary" onClick={this.toggle}>
-              Do Something
+              Submit
             </Button>{" "}
-            <Button color="secondary" onClick={this.toggle}>
-              Cancel
-            </Button>
           </ModalFooter>
         </Modal>
       </div>
