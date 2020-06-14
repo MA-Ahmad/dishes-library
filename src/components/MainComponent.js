@@ -23,26 +23,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 const mapDispatchToProps = dispatch => ({
   postComment: (dishId, rating, author, comment) =>
     dispatch(postComment(dishId, rating, author, comment)),
-  postFeedback: (
-    firstname,
-    lastname,
-    telnum,
-    email,
-    agree,
-    contactType,
-    message
-  ) =>
-    dispatch(
-      postFeedback(
-        firstname,
-        lastname,
-        telnum,
-        email,
-        agree,
-        contactType,
-        message
-      )
-    ),
+  postFeedback: feedback => dispatch(postFeedback(feedback)),
   fetchDishes: () => {
     dispatch(fetchDishes());
   },
