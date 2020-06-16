@@ -3,7 +3,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Card,
-  CardImg,
   CardBody,
   CardHeader,
   Media
